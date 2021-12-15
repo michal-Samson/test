@@ -14,7 +14,7 @@ export default function Welcome() {
                 {go === false ?
                     <div><p>What is your name</p>
                         <input defaultValue={name} onChange={(e) => dispatch(actions.setName(e.target.value))}  /><br></br>
-                        <Button  onClick={()=>dispatch(actions.setGo({"act":true}))} color="primary">Go</Button>
+                        <Button disabled={name == "" ? true : false}  onClick={()=>dispatch(actions.setGo({"act":true}))} color="primary">Go</Button>
                     </div>
                      : <Main  />}  
             </Paper>
